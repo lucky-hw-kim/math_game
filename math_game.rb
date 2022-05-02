@@ -14,68 +14,6 @@
 # ----------------------------------------------------------------
 
 
-class Players
-
-  attr_accessor :lives, :score, :player
-
-  def initialize  (player)
-    puts "Initializing #{player}"
-    @player = player
-    @lives = 3
-    @score = 0
-  end
-
-  def ask_question
-    num1 = rand(1..20)
-    num2 = rand(1..20) 
-    operators = ['plus', 'minus', 'multiply by', 'divide by']
-    random_operator = operators.sample
-    if random_operator == 'plus'
-      correct_answer = num1 + num2
-    elsif random_operator == 'minus'
-      correct_answer = num1 - num2
-    elsif random_operator == 'multiply by'
-      correct_answer = num1 * num2
-    elsif random_operator == 'divide by'
-      correct_answer = num1/num2
-    end
-  
-    player_answer = gets.chomp("#{player}: What does #{num1} #{operator} #{num2} equal?")
-  end
-  
-  def give_response
-    if player_answer == correct_answer
-      puts "#{player}: YES! You are correct!"
-      player2.score += 1
-    else
-      puts "#{player}: Seriously? No!"
-      unless player2.lives == 0
-        player2.lives -= 1
-      else 
-        puts "#{player} wins with a score of #{player.score}"
-        puts "---- GAME OVER ----"
-        puts "Goodbye"
-      end
-    end
-  end
-end
-
-
-player1 = Players.new (player1)
-player2 = Players.new (player2)
-
-
-
-
-
-# class score
-
-# end
-
-# class lives
-
-# end
-  
 
 # class Player1
 #   def give_question
