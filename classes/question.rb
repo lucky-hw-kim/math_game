@@ -7,7 +7,7 @@ class Question
     @correct_answer = @num1 + @num2
   end 
 
-  def ask_question(current_player)
+  def ask_question(current_player, opponent)
     puts "#{current_player.player}: What does #{@num1} plus #{@num2} equal?"
     print "> "
     player_answer = $stdin.gets.chomp.to_i
@@ -16,7 +16,7 @@ class Question
       puts "#{current_player.player}: YES! You are correct!"
     else
       puts "#{current_player.player}: Seriously? No!"
-        current_player.lose_life
+        opponent.lose_life
     end
   end
 end
